@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Meta from '../../components/Meta';
@@ -13,27 +12,29 @@ function HomePage() {
     <>
       <Meta title="Главная" />
 
-      <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Typography variant="h4" gutterBottom>
-          Товары
-        </Typography>
+      <Typography
+        variant="h4"
+        sx={{ pb: 2, mb: 4, borderBottom: '1px solid lightgray' }}
+        gutterBottom
+      >
+        Товары
+      </Typography>
 
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: {
-              xs: '1fr',
-              sm: 'repeat(2, 1fr)',
-              md: 'repeat(3, 1fr)',
-            },
-            gap: 4,
-          }}
-        >
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </Box>
-      </Container>
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: {
+            xs: '1fr',
+            sm: 'repeat(2, 1fr)',
+            md: 'repeat(3, 1fr)',
+          },
+          gap: 4,
+        }}
+      >
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </Box>
     </>
   );
 }
