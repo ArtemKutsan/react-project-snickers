@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 
 const navLinks = [
   { title: 'Главная', path: '/' },
-  // { title: 'Корзина', path: '/cart' },
+  { title: 'Корзина', path: '/cart' },
   { title: 'Контакты', path: '/contacts' },
 ];
 
