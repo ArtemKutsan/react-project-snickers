@@ -1,18 +1,14 @@
-// import { StrictMode } from 'react';
 import './index.css';
 import './tailwind.css';
 import App from './App.jsx';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-// import store from './redux/store.js';
-// import { Provider } from 'react-redux';
+import ProductsProvider from './components/ProductsProvider';
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
-  // <Provider store={store}>
   <BrowserRouter>
-    <App />
+    <ProductsProvider>
+      <App />
+    </ProductsProvider>
   </BrowserRouter>,
-  // </Provider>,
-  // </StrictMode>,
 );
