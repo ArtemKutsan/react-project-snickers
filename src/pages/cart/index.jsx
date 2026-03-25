@@ -43,13 +43,21 @@ function CartPage() {
                     width: 100,
                     height: 100,
                     objectFit: 'contain',
-                    borderRight: '1px solid lightgray',
-                    pr: 2,
                   }}
                   image={item.image}
                   alt={item.name}
                 />
-                <Box sx={{ display: 'flex', alignItems: 'center', ml: 4, flex: 1 }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    ml: 2,
+                    flex: 1,
+                    borderLeft: '1px solid lightgray',
+                    pl: 2,
+                  }}
+                >
                   <Typography variant="body1">{item.name}</Typography>
                   <Box
                     sx={{
