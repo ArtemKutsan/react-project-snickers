@@ -13,6 +13,27 @@ const theme = createTheme({
       main: '#3B3C3D',
     },
   },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          boxShadow: 'none',
+          '&:hover': {
+            boxShadow: 'none',
+          },
+          '&:active': {
+            boxShadow: 'none',
+          },
+          '&:focus': {
+            boxShadow: 'none',
+          },
+        },
+      },
+      defaultProps: {
+        disableElevation: true,
+      },
+    },
+  },
 });
 
 createRoot(document.getElementById('root')).render(
