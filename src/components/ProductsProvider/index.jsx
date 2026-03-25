@@ -15,12 +15,24 @@ function ProductsProvider({ children }) {
   };
 
   // api /cartData
-  const fetchCartData = async () => {};
-  const addToCart = async () => {};
-  const deleteFromCart = async () => {};
+  const fetchCartData = async () => {
+    const response = await axios.get(`${BASE_URL}/cartData`);
+    setCartData(response.data);
+  };
+
+  const addToCart = async (product) => {
+    const response = await axios.post(`${BASE_URL}/cartData`, product);
+    setCartData((prev) => [...prev, response.data]);
+  };
+
+  const deleteFromCart = async (productId) => {
+    await axios.delete(`${BASE_URL}/cartData/${productId}`);
+    setCartData((prev) => prev.filter((item) => item.id !== productId));
+  };
 
   useEffect(() => {
     fetchProducts();
+    fetchCartData();
   }, []);
 
   return (
