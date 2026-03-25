@@ -12,9 +12,13 @@ function HomePage() {
     <>
       <Meta title="Главная" />
 
+      <Box>
+        <img src="public/images/Banner.png" alt="Баннер" />
+      </Box>
+
       <Typography
         variant="h4"
-        sx={{ pb: 2, mb: 4, borderBottom: '1px solid lightgray' }}
+        sx={{ pb: 2, my: 4, borderBottom: '1px solid lightgray' }}
         gutterBottom
       >
         Товары
