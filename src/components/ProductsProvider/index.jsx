@@ -26,25 +26,34 @@ function ProductsProvider({ children }) {
     }
   }, []);
 
-  const addToCart = useCallback(async (product) => {
-    try {
-      const response = await axios.post(`${BASE_URL}/cartData`, product);
-      // сделать fetchCartData
-      setCartData((prev) => [...prev, response.data]);
-    } catch (error) {
-      console.error('Failed to add to cart:', error);
-    }
-  }, []);
+  const addToCart = useCallback(
+    async (product) => {
+      try {
+        // const response = await axios.post(`${BASE_URL}/cartData`, product);
+        // сделать fetchCartData
+        // setCartData((prev) => [...prev, response.data]);
+        await axios.post(`${BASE_URL}/cartData`, product);
+        await fetchCartData();
+      } catch (error) {
+        console.error('Failed to add to cart:', error);
+      }
+    },
+    [fetchCartData],
+  );
 
-  const deleteFromCart = useCallback(async (productId) => {
-    try {
-      await axios.delete(`${BASE_URL}/cartData/${productId}`);
-      // сделать fetchCartData
-      setCartData((prev) => prev.filter((item) => item.id !== productId));
-    } catch (error) {
-      console.error('Failed to delete from cart:', error);
-    }
-  }, []);
+  const deleteFromCart = useCallback(
+    async (productId) => {
+      try {
+        await axios.delete(`${BASE_URL}/cartData/${productId}`);
+        // сделать fetchCartData
+        // setCartData((prev) => prev.filter((item) => item.id !== productId));
+        await fetchCartData();
+      } catch (error) {
+        console.error('Failed to delete from cart:', error);
+      }
+    },
+    [fetchCartData],
+  );
 
   useEffect(() => {
     fetchProducts();
