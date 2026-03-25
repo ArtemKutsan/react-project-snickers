@@ -24,14 +24,21 @@ function CartPage() {
       {cartData.length === 0 ? (
         <Typography>Корзина пуста</Typography>
       ) : (
-        <Box sx={{ display: 'flex', gap: 4, mt: 4 }}>
-          <Box sx={{ flex: 2, display: 'flex', flexDirection: 'column', gap: 4 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            gap: 4,
+            mt: 4,
+          }}
+        >
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
             {cartData.map((item) => (
               <Card
                 key={item.id}
                 sx={{
                   display: 'flex',
-
+                  flexDirection: { xs: 'column', sm: 'row' },
                   p: 2,
                   borderRadius: 6,
                 }}
@@ -40,8 +47,8 @@ function CartPage() {
                 <CardMedia
                   component="img"
                   sx={{
-                    width: 100,
-                    height: 100,
+                    width: { xs: '100%', sm: 100 },
+                    height: { xs: 200, sm: 100 },
                     objectFit: 'contain',
                   }}
                   image={item.image}
@@ -52,10 +59,12 @@ function CartPage() {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    ml: 2,
+                    ml: { sm: 2 },
                     flex: 1,
-                    borderLeft: '1px solid lightgray',
-                    pl: 2,
+                    borderLeft: { sm: '1px solid lightgray' },
+                    pl: { sm: 2 },
+                    mt: { xs: 2, sm: 0 },
+                    width: { xs: '100%', sm: 'auto' },
                   }}
                 >
                   <Typography variant="body1">{item.name}</Typography>
@@ -64,9 +73,11 @@ function CartPage() {
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
+                      flexDirection: { xs: 'column', sm: 'row' },
+                      gap: { xs: 1, sm: 0 },
                     }}
                   >
-                    <Box sx={{ px: 4 }}>
+                    <Box sx={{ px: { sm: 4 } }}>
                       <Typography variant="caption">ЦЕНА:</Typography>
                       <Typography variant="h6" sx={{ whiteSpace: 'nowrap' }}>
                         {item.price} €
