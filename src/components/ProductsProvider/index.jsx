@@ -29,6 +29,7 @@ function ProductsProvider({ children }) {
   const addToCart = useCallback(async (product) => {
     try {
       const response = await axios.post(`${BASE_URL}/cartData`, product);
+      // сделать fetchCartData
       setCartData((prev) => [...prev, response.data]);
     } catch (error) {
       console.error('Failed to add to cart:', error);
@@ -38,6 +39,7 @@ function ProductsProvider({ children }) {
   const deleteFromCart = useCallback(async (productId) => {
     try {
       await axios.delete(`${BASE_URL}/cartData/${productId}`);
+      // сделать fetchCartData
       setCartData((prev) => prev.filter((item) => item.id !== productId));
     } catch (error) {
       console.error('Failed to delete from cart:', error);
