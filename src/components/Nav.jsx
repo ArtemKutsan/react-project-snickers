@@ -22,9 +22,12 @@ function Nav() {
             fontWeight: 600,
             borderRadius: 3,
             px: 2,
-            color: 'primary.contrastText',
+            color: 'rgba(255, 255, 255, 0.5)',
             '&.active': {
-              backgroundColor: 'primary.light',
+              color: '#fff',
+            },
+            '&:hover': {
+              backgroundColor: 'transparent',
             },
           }}
         >
