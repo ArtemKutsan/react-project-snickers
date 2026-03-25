@@ -14,7 +14,7 @@ function HomePage() {
       <Meta title="Главная" />
 
       <Container maxWidth="lg" sx={{ py: 4 }}>
-        <Typography variant="h3" component="h1" gutterBottom>
+        <Typography variant="h4" gutterBottom>
           Товары
         </Typography>
 
