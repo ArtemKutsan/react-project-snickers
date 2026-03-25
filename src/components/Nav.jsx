@@ -19,7 +19,7 @@ function Nav() {
           to={item.path}
           sx={{
             textTransform: 'none',
-            fontWeight: 600,
+            fontWeight: 500,
             borderRadius: 3,
             px: 2,
             color: 'rgba(255, 255, 255, 0.5)',
