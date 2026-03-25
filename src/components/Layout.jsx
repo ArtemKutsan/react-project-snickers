@@ -11,8 +11,8 @@ function Layout() {
         <main className="flex-1 py-8 mx-auto w-full">
           <Outlet />
         </main>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }
