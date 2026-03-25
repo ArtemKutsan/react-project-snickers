@@ -4,8 +4,9 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 const navLinks = [
-  { title: 'Home', path: '/' },
-  { title: 'Contacts', path: '/contacts' },
+  { title: 'Главная', path: '/' },
+  // { title: 'Корзина', path: '/cart' },
+  { title: 'Контакты', path: '/contacts' },
 ];
 
 function Nav() {
