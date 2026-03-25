@@ -9,7 +9,7 @@ function Header() {
   return (
     <AppBar position="static" sx={{ boxShadow: '0 4px 16px rgba(0, 0, 0, 0.125)', py: 2 }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>
-        <Typography variant="h6">Сникер-магазин</Typography>
+        <Typography variant="h6">Магазин кроссовок</Typography>
         <Nav />
       </Toolbar>
     </AppBar>
