@@ -25,13 +25,13 @@ function CartPage() {
         <Typography>Корзина пуста</Typography>
       ) : (
         <Box sx={{ display: 'flex', gap: 4, mt: 4 }}>
-          <Box sx={{ flex: 2 }}>
+          <Box sx={{ flex: 2, display: 'flex', flexDirection: 'column', gap: 4 }}>
             {cartData.map((item) => (
               <Card
                 key={item.id}
                 sx={{
                   display: 'flex',
-                  mb: 4,
+
                   p: 2,
                   borderRadius: 6,
                 }}
@@ -82,6 +82,8 @@ function CartPage() {
           </Box>
 
           <Box
+            position="sticky"
+            top="2rem"
             sx={{
               flex: 1,
               p: 4,
