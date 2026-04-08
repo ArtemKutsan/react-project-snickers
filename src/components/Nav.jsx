@@ -4,8 +4,9 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 
 const navLinks = [
-  { title: 'Home', path: '/' },
-  { title: 'Contacts', path: '/contacts' },
+  { title: 'Главная', path: '/' },
+  { title: 'Корзина', path: '/cart' },
+  { title: 'Контакты', path: '/contacts' },
 ];
 
 function Nav() {
@@ -18,12 +19,15 @@ function Nav() {
           to={item.path}
           sx={{
             textTransform: 'none',
-            fontWeight: 600,
+            fontWeight: 500,
             borderRadius: 3,
             px: 2,
-            color: 'primary.contrastText',
+            color: 'rgba(255, 255, 255, 0.5)',
             '&.active': {
-              backgroundColor: 'primary.light',
+              color: '#fff',
+            },
+            '&:hover': {
+              backgroundColor: 'transparent',
             },
           }}
         >
